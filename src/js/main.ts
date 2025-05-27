@@ -10,6 +10,7 @@ import { initAccordion } from './library/accordion';
 import {noUi} from "./library/nouiSlider";
 import {initAnchor} from "./main/anchor";
 import {initCharacteristic} from "./main/characterisitc";
+import {initSidebarCatalog} from "./main/sidebarCatalog";
 /*import 'dragscroll';*/
 document.addEventListener('DOMContentLoaded', () => {
     lazyLoadMedia();
@@ -20,9 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initCharacteristic();
     // initNotyf();
     // initializeTabs();
+    initSidebarCatalog();
     initTooltip();
     initAnchor();
     // initMarquee();
-    // modal;
+    modal;
 });
 

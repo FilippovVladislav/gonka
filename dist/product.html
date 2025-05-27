@@ -6,6 +6,7 @@
     <!-- Критичные стили -->
     <link rel="stylesheet" href="files/atm.css">
     <link rel="stylesheet" href="files/bundle.css">
+
     <link rel="stylesheet" href="css/async.css">
 <style>
 /*# sourceMappingURL=critical.css.map */
@@ -662,7 +663,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="button-main button-full button-red mb-8">Задать вопрос</a>
+                            <button type="button" class="button-main button-full button-red mb-8 open-modal" data-modal="modal-1">Задать вопрос</button>
                             <div class="size-15 fw-500">Указанный платеж является приблезительным</div>
                         </div>
                         <div class="product-sidebar__consultation">
@@ -972,7 +973,44 @@
         </div>
     </div>
 </div>
-
+<div class="modal" id="modal-1">
+    <div class="modal-content">
+        <button type="button" class="close-modal icon">
+          <svg>
+              <use xlink:href="images/sprite.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <div class="modal-content-title size-32 fw-700 mb-25">
+            Получите консультацию  по телефону
+        </div>
+        <div class="size-22 mb-25 modal-content-description">Заполните форму, чтобы мы могли  Вам перезвонить</div>
+        <form action="#">
+            <div class="form-item">
+                <input type="text" placeholder="Имя*" class="input-text">
+            </div>
+            <div class="form-item">
+                <input type="text" placeholder="Телефон*" class="input-text">
+            </div>
+            <button type="button" class="button-main button-red button-full mb-10">Заказать звонок</button>
+            <div class="size-11">
+                Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal modal-success" id="modal-success">
+    <div class="modal-content">
+        <button type="button" class="close-modal icon">
+            <svg>
+                <use xlink:href="images/sprite.svg#icon-cross"></use>
+            </svg>
+        </button>
+        <div class="modal-content-title size-32 fw-700 mb-25">
+            Ваша заявка отправлена
+        </div>
+        <div class="size-22 mb-25 modal-content-description">Спасибо! Мы свяжемся с Вами в ближайшее время через указанный вами мессенджер.</div>
+    </div>
+</div>
 <footer></footer>
 
 

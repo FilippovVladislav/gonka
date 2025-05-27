@@ -78,3 +78,5 @@ class Modal {
 }
 
 export const modal = new Modal();
+
+(window as any).modal = modal;
