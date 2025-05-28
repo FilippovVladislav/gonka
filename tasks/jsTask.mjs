@@ -18,18 +18,21 @@ export async function jsTask() {
     // Убедимся, что папка dist/js существует
     createFolderIfNotExists(outputDir);
 
-    return gulp.src(['src/js/start.ts', 'src/js/main.ts'])
+    return gulp.src('src/js/**/*.{ts, js}') // Все .js и .ts файлы
         .pipe(gulpEsbuild({
-            loader: { '.ts': 'ts' },
+            loader: {
+                '.ts': 'ts',
+                '.js': 'js'
+            },
             bundle: true,
-            minify: true,  // Включаем минификацию
-            sourcemap: true, // Включаем исходные карты для отладки
+            minify: false, // ❌ Отключаем минификацию
+            sourcemap: true,
             target: ['es2017'],
-            entryNames: '[name]',  // Используем исходное имя для файлов
-            outdir: '',  // Указываем конкретную папку для вывода
+            entryNames: '[name]', // Имя файла сохраняется
+            outdir: '', // Оставляем пустым — gulp.dest используется
         }).on('error', function (err) {
-            console.error('Esbuild error:', err.message);  // Выводим ошибки esbuild в консоль
-            this.emit('end');  // Завершаем задачу, даже если есть ошибка
+            console.error('Esbuild error:', err.message);
+            this.emit('end');
         }))
-        .pipe(gulp.dest(outputDir)); // Записываем в папку dist/js
+        .pipe(gulp.dest(outputDir));
 }

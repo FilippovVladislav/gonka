@@ -47,6 +47,9 @@
 }
 .bx-filter .bx-filter-parameters-box.bx-active .bx-filter-parameters-box-title span {
     /*color: #95a1a8;*/
+    font-weight: 600;
+    font-size: 16px;
+    color: #2B2D38;
 }
 .bx-filter .bx-filter-parameters-box.bx-active .bx-filter-parameters-box-title span:hover {
     /*color: #758087;*/

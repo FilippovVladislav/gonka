@@ -37,7 +37,7 @@ export function sassTask() {
             .pipe(sourcemaps.init())
             .pipe(sass().on('error', sass.logError)) // Компиляция Sass с выводом ошибок
             .pipe(postcss(postcssPlugins))
-            .pipe(cleanCSS())
+
             .pipe(rename('critical.css'))
             .pipe(sourcemaps.write('.'))
             .pipe(dest(paths.output));
@@ -50,7 +50,7 @@ export function sassTask() {
             .pipe(sourcemaps.init())
             .pipe(sass().on('error', sass.logError)) // Компиляция Sass с выводом ошибок
             .pipe(postcss(postcssPlugins))
-            .pipe(cleanCSS())
+
             .pipe(rename('async.css'))
             .pipe(sourcemaps.write('.'))
             .pipe(dest(paths.output));

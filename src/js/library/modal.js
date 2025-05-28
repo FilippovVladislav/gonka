@@ -1,9 +1,4 @@
 class Modal {
-    private modals: NodeListOf<HTMLElement>;
-    private openButtons: NodeListOf<HTMLElement>;
-    private closeButtons: NodeListOf<HTMLElement>;
-    private closeButtons2: NodeListOf<HTMLElement>;
-
     constructor() {
         this.modals = document.querySelectorAll('.modal');
         this.openButtons = document.querySelectorAll('.open-modal');
@@ -13,19 +8,19 @@ class Modal {
         this._init();
     }
 
-    private _init(): void {
+    _init() {
         // Обработка кнопок открытия модалок
-        this.openButtons.forEach((button: HTMLElement) => {
-            button.addEventListener('click', (e: Event) => {
-                const modalId = (button as HTMLElement).getAttribute('data-modal');
+        this.openButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const modalId = button.getAttribute('data-modal');
                 if (modalId) {
                     // Если кнопка находится внутри модалки, закрыть текущую
-                    const currentModal = (button.closest('.modal') as HTMLElement);
+                    const currentModal = button.closest('.modal');
                     if (currentModal && currentModal.classList.contains('show')) {
                         this.close();
                     }
 
-                    // Немного подождать, чтобы избежать конфликта с анимациями
+                    // Немного подождать, чтобы избежать конфликтов с анимациями
                     setTimeout(() => {
                         this.open(modalId);
                     }, 10);
@@ -34,21 +29,21 @@ class Modal {
         });
 
         // Закрытие модалки по кнопке-крестику
-        this.closeButtons.forEach((button: HTMLElement) => {
+        this.closeButtons.forEach(button => {
             button.addEventListener('click', () => {
                 this.close();
             });
         });
 
-        this.closeButtons2.forEach((button: HTMLElement) => {
+        this.closeButtons2.forEach(button => {
             button.addEventListener('click', () => {
                 this.close();
             });
         });
 
-        // Закрытие при клике вне содержимого
-        this.modals.forEach((modal: HTMLElement) => {
-            modal.addEventListener('click', (e: MouseEvent) => {
+        // Закрытие при клике вне содержимого модалки
+        this.modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     this.close();
                 }
@@ -56,27 +51,27 @@ class Modal {
         });
 
         // Закрытие по клавише Escape
-        document.addEventListener('keydown', (e: KeyboardEvent) => {
+        document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 this.close();
             }
         });
     }
 
-    public open(modalId: string): void {
+    open(modalId) {
         const modal = document.getElementById(modalId);
         if (modal) {
             modal.classList.add('show');
         }
     }
 
-    public close(): void {
-        this.modals.forEach((modal: HTMLElement) => {
+    close() {
+        this.modals.forEach(modal => {
             modal.classList.remove('show');
         });
     }
 }
 
-export const modal = new Modal();
-
-(window as any).modal = modal;
+// Создаем экземпляр и сохраняем в глобальную область видимости, если нужно
+const modal = new Modal();
+window.modal = modal;

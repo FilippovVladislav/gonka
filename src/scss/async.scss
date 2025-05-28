@@ -137,7 +137,7 @@
   }
   .swiper-slide{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
+    border-radius: 10px !important;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -440,7 +440,7 @@
   margin: -20px;
   padding: 20px;
   .swiper-slide{
-    border-radius: 20px;
+    border-radius: 20px !important;
     background: #F0F2F9;
   }
 }
@@ -455,8 +455,12 @@
 
 .swiper-slide__title, .chapter-element__title{
   text-decoration: none;
-  display: inline-flex;
   transition: all .25s linear;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;     /* Кол-во строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   &:hover{
     color: #FF9100;
   }
@@ -815,6 +819,7 @@
   justify-content: space-between;
   font-size: 18px;
   background: transparent;
+  text-align: left;
   width: 100%;
   border: none;
   transition: all .25s linear;
@@ -832,6 +837,11 @@
       stroke: #FF9100;
       fill: transparent;
     }
+  }
+  a{
+    text-decoration: none;
+    width: 100%;
+    display: inline-flex;
   }
 }
 
@@ -999,4 +1009,278 @@
     display: none;
     margin-top: 30px;
   }
+}
+
+.x2style{
+  .body{
+    .body{
+      padding-top: 0;
+    }
+  }
+  .bx-filter .bx-filter-section{
+    padding-top: 0;
+  }
+  .bx-filter{
+    background: transparent;
+  }
+  .bx-filter .bx-filter-parameters-box-title{
+    padding-bottom: 20px;
+  }
+  .bx-filter .bx-filter-parameters-box-title span{
+    font-weight: 600;
+    font-size: 16px;
+    color: #2B2D38;
+  }
+  .bx-filter-title{
+    display: none;
+  }
+  .bx-filter .bx-filter-popup-result{
+    border: 1px solid #E7E8EE;
+    background: white;
+  }
+  .row.bx-filter-parameters-box-container{
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .bx-ui-slider-track-container{
+    width: 100%;
+  }
+  .bx-filter .bx-filter-parameters-box.bx-active .bx-filter-block i.bx-ft-sub{
+    display: none;
+  }
+  .bx-filter.bx-blue .bx-filter-section{
+    background: transparent;
+  }
+  .bx-filter-param-label{
+    position: relative;
+    width: 100%;
+    input{
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      &:checked{
+        & + .check-element{
+          .icon{
+            svg{
+              fill: #ff9100;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bx-filter-input-checkbox{
+    display: flex;
+    align-items: center;
+  }
+  .bx-filter-param-text{
+    flex: 1;
+  }
+  .checkbox{
+    margin-bottom: 10px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .bx-filter-parameters-box-container{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    .button-main{
+      width: calc(50% - 4px);
+    }
+  }
+  .smartfilter{
+    margin-bottom: 0;
+  }
+  .bx-filter .bx-filter-parameters-box{
+    margin-bottom: 30px;
+  }
+  .bx-filter .bx-ui-slider-track{
+    height: 3px;
+  }
+  .bx-filter.bx-blue .bx-ui-slider-track{
+    background: #e7e8ee;
+  }
+  .bx-filter.bx-blue .bx-ui-slider-pricebar-vn{
+    background: #e7e8ee;
+  }
+  .bx-filter.bx-blue .bx-ui-slider-pricebar-v, .bx-filter.bx-blue .bx-ui-slider-pricebar-vd{
+    background: #F60001;
+  }
+  .bx-filter .bx-ui-slider-handle{
+    width: 16px;
+    height: 16px;
+    top: -7px;
+    background: white !important;
+    border-radius: 50%;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 3px solid #F60001;
+      border-radius: 50%;
+    }
+  }
+  .bx-filter .bx-ui-slider-handle.left{
+    margin-left: -9px;
+  }
+  .bx-filter .bx-ui-slider-handle.right{
+    margin-right: -9px;
+  }
+  .bx-ui-slider-range{
+    z-index: 100 !important;
+  }
+  .bx-filter .bx-ui-slider-part{
+    height: 8px;
+    top: 13px;
+    background: #A7A7A7;
+  }
+  .bx-filter .bx-ui-slider-part span{
+    top: 11px;
+    font-weight: 500;
+    color: #A7A7A7;
+  }
+  .bx-filter .bx-ui-slider-track-container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.checkbox-button{
+  color: #FF9100;
+  align-items: center;
+  font-weight: 500;
+  display: none;
+  cursor: pointer;
+  .icon{
+    width: 7px;
+    height: 16px;
+    margin-left: 10px;
+    svg{
+      transform: rotate(90deg);
+      fill: transparent;
+      stroke: #A7A7A7;
+      transition: all .25s linear;
+    }
+  }
+  &.active{
+    .icon{
+      svg{
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
+.checkbox-button-count{
+  margin-left: 3px;
+}
+
+.w-100{
+  width: 100%;
+}
+
+.check-element{
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #A7A7A7;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .icon{
+    width: 14px;
+    height: 14px;
+    svg{
+      fill: transparent;
+    }
+  }
+}
+
+.count-element{
+  flex-shrink: 0;
+  padding: 0 5px;
+  background: #E7E8EE;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 8px;
+  border-radius: 100px;
+  height: 20px;
+}
+
+.product-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7; /* ограничение по числу строк */
+  -webkit-box-orient: vertical;
+  transition: max-height 0.3s ease;
+  position: relative;
+  p{
+    margin: 0 0 18px !important;
+  }
+}
+
+.product-description.expanded {
+  -webkit-line-clamp: unset;
+  max-height: none;
+}
+
+.product-show-description {
+  display: none;
+}
+
+.product-show-description.visible {
+  display: inline-block;
+}
+
+.value-slider{
+  display: flex;
+  height: 38px;
+  border: 1px solid #E7E8EE;
+  border-radius: 8px;
+  overflow: hidden;
+  .bx-filter-parameters-box-container-block{
+    width: 100%;
+    &:first-child{
+      input{
+        border-radius: 8px 0 0 8px;
+      }
+    }
+  }
+  input{
+    border: none !important;
+    padding: 0 16px !important;
+  }
+}
+
+.value-slider__delimiter{
+  width: 31px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #E7E8EE;
+}
+
+.value-slider__main{
+  width: 52px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #E7E8EE;
 }

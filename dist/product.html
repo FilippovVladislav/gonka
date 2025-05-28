@@ -6,12 +6,13 @@
     <!-- Критичные стили -->
     <link rel="stylesheet" href="files/atm.css">
     <link rel="stylesheet" href="files/bundle.css">
-
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="files/colors.css">
     <link rel="stylesheet" href="css/async.css">
 <style>
 /*# sourceMappingURL=critical.css.map */
 </style></head>
-<body>
+<body class="x2style">
 
 <header></header>
 
@@ -503,20 +504,6 @@
   <img data-src="images/slide.jpg" alt="Слайд" class="lazy-img" width="230" height="167" loading="lazy">
 </picture>
                                             </div>
-                                            <div class="swiper-slide">
-                                                
-<picture>
-  <source data-srcset="images/slide.webp" type="image/webp">
-  <img data-src="images/slide.jpg" alt="Слайд" class="lazy-img" width="230" height="167" loading="lazy">
-</picture>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                
-<picture>
-  <source data-srcset="images/slide.webp" type="image/webp">
-  <img data-src="images/slide.jpg" alt="Слайд" class="lazy-img" width="230" height="167" loading="lazy">
-</picture>
-                                            </div>
                                         </div>
                                     </div>
                                     <button type="button" class="icon swiper-arrow swiper-arrow_next">
@@ -585,20 +572,22 @@
                         </div>
                         <div class="description description-desktop" id="description-desktop">
                             <div class="fw-700 mb-20">Описание</div>
-                            <p>
-                                Описание Lorem ipsum dolor sit amet. Eos voluptatem possimus id sint dolorem sit sint
-                                placeat et distinctio atque a iusto delectus? Id quis voluptatum ea eius minus a
-                                inventore suscipit aut repellendus totam et consequatur maxime aut totam sunt in
-                                quibusdam eligendi. Ut aliquam voluptates aut quam consequatur qui corporis illo. Ad
-                                nesciunt minima et ducimus amet cum suscipit itaque et doloribus sint et assumenda
-                                itaque eos obcaecati molestiae eos quam velit.
-                            </p>
-                            <p>
-                                Et molestiae repudiandae aut atque modi in dolorem nobis quo corporis iusto non quia
-                                nulla sed soluta doloremque sit soluta quia. Eum obcaecati aspernatur ut adipisci
-                                voluptatem aut velit voluptas?
-                            </p>
-                            <a href="#" class="link-orange fw-600 mt-20">Подробнее</a>
+                            <div class="product-description">
+                                <p>
+                                    Описание Lorem ipsum dolor sit amet. Eos voluptatem possimus id sint dolorem sit sint
+                                    placeat et distinctio atque a iusto delectus? Id quis voluptatum ea eius minus a
+                                    inventore suscipit aut repellendus totam et consequatur maxime aut totam sunt in
+                                    quibusdam eligendi. Ut aliquam voluptates aut quam consequatur qui corporis illo. Ad
+                                    nesciunt minima et ducimus amet cum suscipit itaque et doloribus sint et assumenda
+                                    itaque eos obcaecati molestiae eos quam velit.
+                                </p>
+                                <p>
+                                    Et molestiae repudiandae aut atque modi in dolorem nobis quo corporis iusto non quia
+                                    nulla sed soluta doloremque sit soluta quia. Eum obcaecati aspernatur ut adipisci
+                                    voluptatem aut velit voluptas?
+                                </p>
+                            </div>
+                            <a href="#" class="link-orange fw-600 mt-20 product-show-description">Подробнее</a>
                         </div>
                     </div>
                     <div class="product-sidebar">
@@ -707,20 +696,22 @@
                     </div>
                     <div class="description description-mobile" id="description-mobile">
                         <div class="fw-700 mb-20">Описание</div>
-                        <p>
-                            Описание Lorem ipsum dolor sit amet. Eos voluptatem possimus id sint dolorem sit sint
-                            placeat et distinctio atque a iusto delectus? Id quis voluptatum ea eius minus a
-                            inventore suscipit aut repellendus totam et consequatur maxime aut totam sunt in
-                            quibusdam eligendi. Ut aliquam voluptates aut quam consequatur qui corporis illo. Ad
-                            nesciunt minima et ducimus amet cum suscipit itaque et doloribus sint et assumenda
-                            itaque eos obcaecati molestiae eos quam velit.
-                        </p>
-                        <p>
-                            Et molestiae repudiandae aut atque modi in dolorem nobis quo corporis iusto non quia
-                            nulla sed soluta doloremque sit soluta quia. Eum obcaecati aspernatur ut adipisci
-                            voluptatem aut velit voluptas?
-                        </p>
-                        <a href="#" class="link-orange fw-600 mt-20">Подробнее</a>
+                        <div class="product-description">
+                            <p>
+                                Описание Lorem ipsum dolor sit amet. Eos voluptatem possimus id sint dolorem sit sint
+                                placeat et distinctio atque a iusto delectus? Id quis voluptatum ea eius minus a
+                                inventore suscipit aut repellendus totam et consequatur maxime aut totam sunt in
+                                quibusdam eligendi. Ut aliquam voluptates aut quam consequatur qui corporis illo. Ad
+                                nesciunt minima et ducimus amet cum suscipit itaque et doloribus sint et assumenda
+                                itaque eos obcaecati molestiae eos quam velit.
+                            </p>
+                            <p>
+                                Et molestiae repudiandae aut atque modi in dolorem nobis quo corporis iusto non quia
+                                nulla sed soluta doloremque sit soluta quia. Eum obcaecati aspernatur ut adipisci
+                                voluptatem aut velit voluptas?
+                            </p>
+                        </div>
+                        <a href="#" class="link-orange fw-600 mt-20 product-show-description">Подробнее</a>
                     </div>
                 </div>
                 <div class="product-main-block mb-120">
@@ -1014,10 +1005,13 @@
 <footer></footer>
 
 
-<script src="js/start.js" type="module"></script>
 
-<!-- Загружается после полной загрузки страницы -->
-<script src="js/main.js" type="module" defer=""></script>
+<script src="files/js/swiper-bundle.min.js"></script>
+<script src="files/js/nouislider.js"></script>
+<script src="files/js/fancybox.umd.js"></script>
+<script src="files/js/popper.min.js"></script>
+<script src="files/js/tippy-bundle.umd.min.js"></script>
+<script src="js/main.js"></script>
 
 
 </body></html>

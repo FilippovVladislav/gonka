@@ -1,4 +1,4 @@
-import { addPreloadToLCP } from './utils/LCPFile';
+import { addPreloadToLCP } from './utils/LCPFile.js';
 window.addEventListener('load', () => {
     addPreloadToLCP();
 });

@@ -1,30 +1,25 @@
-import { lazyLoadMedia } from './utils/lazyload';
-import { initSwiper } from './library/swiper';
-import { initFancybox } from './library/fancybox';
-import { initNotyf } from './library/notification';
-import { initializeTabs } from './library/tabs';
-import { initTooltip } from './library/typpy';
-import { initMarquee } from './library/marquee';
-import { modal } from './library/modal';
-import { initAccordion } from './library/accordion';
-import {noUi} from "./library/nouiSlider";
-import {initAnchor} from "./main/anchor";
-import {initCharacteristic} from "./main/characterisitc";
-import {initSidebarCatalog} from "./main/sidebarCatalog";
+import { lazyLoadMedia } from './utils/lazyload.js';
+import { initSwiper } from './library/swiper.js';
+import {noUi} from "./library/nouiSlider.js";
+import { initFancybox } from './library/fancybox.js';
+import { initTooltip } from './library/typpy.js';
+import { modal } from './library/modal.js';
+
+import {initAnchor} from "./main/anchor.js";
+import {initCharacteristic} from "./main/characterisitc.js";
+import {initSidebarCatalog} from "./main/sidebarCatalog.js";
+import {initDescription} from "./main/description.js";
 /*import 'dragscroll';*/
 document.addEventListener('DOMContentLoaded', () => {
     lazyLoadMedia();
-    //initAccordion();
     initSwiper();
     noUi();
     initFancybox();
-    initCharacteristic();
-    // initNotyf();
-    // initializeTabs();
-    initSidebarCatalog();
     initTooltip();
+    initCharacteristic();
+    initSidebarCatalog();
+    initDescription();
     initAnchor();
-    // initMarquee();
     modal;
 });
 

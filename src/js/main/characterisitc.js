@@ -1,14 +1,17 @@
 export function initCharacteristic() {
-    const MAX_VISIBLE = 12;
+    var MAX_VISIBLE = 12;
 
-    const container = document.querySelector<HTMLElement>(".characteristic-block");
-    const items = container?.querySelectorAll<HTMLElement>(".characteristic-item") || [];
-    const button = container?.querySelector<HTMLButtonElement>(".button-all-characteristic");
+    var container = document.querySelector(".characteristic-block");
+    if (!container) return;
 
-    if (!container || !button || items.length === 0) return;
+    var items = container.querySelectorAll(".characteristic-item");
+    if (!items || items.length === 0) return;
+
+    var button = container.querySelector(".button-all-characteristic");
+    if (!button) return;
 
     // Показываем первые 12
-    items.forEach((item, index) => {
+    items.forEach(function(item, index) {
         if (index < MAX_VISIBLE) {
             item.classList.add("visible");
         }
@@ -18,9 +21,9 @@ export function initCharacteristic() {
     if (items.length > MAX_VISIBLE) {
         button.style.display = "inline-flex";
 
-        let expanded = false;
+        var expanded = false;
 
-        button.addEventListener("click", () => {
+        button.addEventListener("click", function() {
             expanded = !expanded;
 
             if (expanded) {
@@ -31,7 +34,7 @@ export function initCharacteristic() {
                 button.textContent = "Развернуть все";
 
                 // Скрываем лишние
-                items.forEach((item, index) => {
+                items.forEach(function(item, index) {
                     if (index >= MAX_VISIBLE) {
                         item.classList.remove("visible");
                     }
